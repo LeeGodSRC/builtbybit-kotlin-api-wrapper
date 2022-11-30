@@ -56,3 +56,30 @@ runBlocking {
     println(resourceArray)
 }
 ```
+
+### JitPack Installation
+
+---
+
+**Gradle Groovy**
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.LeeGodSRC:builtbybit-kotlin-api-wrapper:Tag'
+}
+```
+
+**Gradle Kotlin**
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.LeeGodSRC:builtbybit-kotlin-api-wrapper:Tag")
+}
+```
