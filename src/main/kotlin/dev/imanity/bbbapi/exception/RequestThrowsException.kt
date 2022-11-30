@@ -2,4 +2,4 @@ package dev.imanity.bbbapi.exception
 
 import java.lang.Exception
 
-class RequestThrowsException(exception: Exception): RuntimeException(exception)
+class RequestThrowsException(val exception: Exception): RequestException()
