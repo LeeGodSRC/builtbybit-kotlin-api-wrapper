@@ -24,7 +24,7 @@ runBlocking {
 
 Every request action are suspend functions, so you can use them in a coroutine scope.
 
-You can find every request action in the extension functions class [BBBClientRequestExtensions.kt]().
+You can find every request action in the extension functions class [BBBClientRequestExtensions.kt](src/main/kotlin/dev/imanity/bbbapi/request/BBBClientRequestExtensions.kt).
 
 ## Exception Handling
 
