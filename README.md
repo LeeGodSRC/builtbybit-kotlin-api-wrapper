@@ -1,8 +1,8 @@
-# buildbybit-kotlin-api-wrapper
+# builtbybit-kotlin-api-wrapper
 
 ---
 
-A Kotlin wrapper for the [BuildByBit Ultimate API](https://builtbybit.com/wiki/ultimate-api/) built with Kotlin and KotlinX in combination with the [Ktor HTTP Client](https://ktor.io/clients/http-client.html) and [KotlinX Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
+A Kotlin wrapper for the [BuiltByBit Ultimate API](https://builtbybit.com/wiki/ultimate-api/) built with Kotlin and KotlinX in combination with the [Ktor HTTP Client](https://ktor.io/clients/http-client.html) and [KotlinX Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
 
 Most of the data structures are copied from the [BuiltByBit Java API Wrapper](https://github.com/swanis/builtbybit-java-api-wrapper) by [swanis](https://github.com/swanis), You will find a lot of similarities in the code.
 
