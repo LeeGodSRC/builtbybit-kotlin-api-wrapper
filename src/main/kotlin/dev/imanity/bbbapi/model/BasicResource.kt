@@ -10,5 +10,5 @@ data class BasicResource(
     val title: String,
     @SerialName("tag_line") val tagLine: String,
     val price: Double,
-    val currency: String
+    val currency: String,
 )

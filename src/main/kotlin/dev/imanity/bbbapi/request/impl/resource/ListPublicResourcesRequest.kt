@@ -6,7 +6,7 @@ import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
 class ListPublicResourcesRequest(sortOptions: SortOptions) : Request<Array<BasicResource>>(
-    "resources/public${sortOptions}",
+    "resources${sortOptions}",
     Method.GET,
     null
 )
