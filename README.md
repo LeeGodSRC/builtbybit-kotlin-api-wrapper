@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/LeeGodSRC/builtbybit-kotlin-api-wrapper.svg)](https://jitpack.io/#LeeGodSRC/builtbybit-kotlin-api-wrapper)
+
 # builtbybit-kotlin-api-wrapper
 
 ---
@@ -54,5 +56,32 @@ runBlocking {
     ))
 
     println(resourceArray)
+}
+```
+
+### JitPack Installation
+
+---
+
+**Gradle Groovy**
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.LeeGodSRC:builtbybit-kotlin-api-wrapper:Tag'
+}
+```
+
+**Gradle Kotlin**
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.LeeGodSRC:builtbybit-kotlin-api-wrapper:Tag")
 }
 ```
