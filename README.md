@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/LeeGodSRC/builtbybit-kotlin-api-wrapper.svg)](https://jitpack.io/#LeeGodSRC/builtbybit-kotlin-api-wrapper)
+
 # builtbybit-kotlin-api-wrapper
 
 ---
