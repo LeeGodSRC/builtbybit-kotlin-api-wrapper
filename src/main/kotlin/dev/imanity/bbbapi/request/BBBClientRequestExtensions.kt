@@ -51,7 +51,7 @@ suspend fun BBBClient.listUnreadConversations(sortOptions: SortOptions = SortOpt
     ListUnreadConversationsRequest(sortOptions), wait
 ))
 
-suspend fun BBBClient.startConversation(userIds: Array<Int>, title: String, message: String, wait: Boolean = true) = handle(this.execute(
+suspend fun BBBClient.startConversation(userIds: Array<Int>, title: String, message: String, wait: Boolean = true) = get(this.execute(
     StartConversationRequest(userIds, title, message), wait
 ))
 
@@ -59,7 +59,7 @@ suspend fun BBBClient.listUnreadConversationReplies(conversationId: Int, sortOpt
     ListUnreadConversationRepliesRequest(conversationId, sortOptions), wait
 ))
 
-suspend fun BBBClient.replyToUnreadConversation(conversationId: Int, message: String, wait: Boolean = true) = handle(this.execute(
+suspend fun BBBClient.replyToUnreadConversation(conversationId: Int, message: String, wait: Boolean = true) = get(this.execute(
     ReplyToUnreadConversationRequest(conversationId, message), wait
 ))
 
