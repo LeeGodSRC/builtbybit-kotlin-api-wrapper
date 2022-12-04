@@ -98,10 +98,10 @@ class BBBClient(val token: Token) : Closeable {
 suspend inline fun <reified T : Any> decodeResponse(response: HttpResponse): Response<T> {
     val body = response.body<ResponseBody<T>>()
     return if (response.headers.contains("Retry-After")) {
-        Response(response.headers["Retry-After"]!!.toLong())
+        Response.rateLimit(response.headers["Retry-After"]!!.toLong())
     } else if (body.result == "error") {
-        Response(body.error!!)
+        Response.error(body.error!!)
     } else {
-        Response(body.data!!)
+        Response.success(body.data!!)
     }
 }
