@@ -4,12 +4,19 @@ import dev.imanity.bbbapi.model.Download
 import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
+import dev.imanity.bbbapi.request.Response
+import io.ktor.client.statement.*
 
 data class ListResourceDownloadsByVersionRequest(
     val resourceId: Int,
     val versionId: Int,
-    val sortOptions: SortOptions) : Request<Array<Download>>(
+    val sortOptions: SortOptions
+) : Request<Array<Download>>(
     "resources/$resourceId/downloads/versions/$versionId${sortOptions}",
     Method.GET,
     null
-)
+) {
+    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Download>> {
+        return dev.imanity.bbbapi.decodeResponse(httpResponse)
+    }
+}

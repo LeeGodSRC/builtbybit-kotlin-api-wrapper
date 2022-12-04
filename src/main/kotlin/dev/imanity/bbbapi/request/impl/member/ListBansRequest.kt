@@ -3,6 +3,8 @@ package dev.imanity.bbbapi.request.impl.member
 import dev.imanity.bbbapi.model.Ban
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
+import dev.imanity.bbbapi.request.Response
+import io.ktor.client.statement.*
 
 class ListBansRequest: Request<Array<Ban>>(
     "members/bans",
@@ -17,5 +19,9 @@ class ListBansRequest: Request<Array<Ban>>(
 
     override fun hashCode(): Int {
         return javaClass.hashCode()
+    }
+
+    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Ban>> {
+        return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

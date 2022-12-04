@@ -2,12 +2,15 @@ package dev.imanity.bbbapi.request.impl.resource
 
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
+import dev.imanity.bbbapi.request.Response
+import io.ktor.client.statement.*
 
 data class ModifyResourceRequest(
     val resourceId: Int,
     val title: String,
     val tagline: String,
-    val description: String) : Request<Unit>(
+    val description: String
+) : Request<Unit>(
     "resources/$resourceId",
     Method.PATCH,
     mapOf(
@@ -15,4 +18,8 @@ data class ModifyResourceRequest(
         "tag_line" to tagline,
         "description" to description
     )
-)
+) {
+    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+        return dev.imanity.bbbapi.decodeResponse(httpResponse)
+    }
+}

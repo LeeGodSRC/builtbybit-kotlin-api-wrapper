@@ -3,6 +3,8 @@ package dev.imanity.bbbapi.request.impl.resource.version
 import dev.imanity.bbbapi.model.Version
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
+import dev.imanity.bbbapi.request.Response
+import io.ktor.client.statement.*
 
 data class RetrieveLatestResourceVersionRequest(
     val resourceId: Int
@@ -10,4 +12,8 @@ data class RetrieveLatestResourceVersionRequest(
     "resources/$resourceId/versions/latest",
     Method.GET,
     null
-)
+) {
+    override suspend fun decode(httpResponse: HttpResponse): Response<Version> {
+        return dev.imanity.bbbapi.decodeResponse(httpResponse)
+    }
+}
