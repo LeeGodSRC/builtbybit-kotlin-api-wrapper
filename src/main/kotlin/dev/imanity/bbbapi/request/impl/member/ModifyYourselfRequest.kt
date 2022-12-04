@@ -3,10 +3,10 @@ package dev.imanity.bbbapi.request.impl.member
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ModifyYourselfRequest(
-    customTitle: String,
-    aboutMe: String,
-    signature: String
+data class ModifyYourselfRequest(
+    val customTitle: String,
+    val aboutMe: String,
+    val signature: String
 ): Request<Unit>(
     "members/self",
     Method.PATCH,

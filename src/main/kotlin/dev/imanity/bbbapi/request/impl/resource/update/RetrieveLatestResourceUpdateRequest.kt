@@ -4,8 +4,8 @@ import dev.imanity.bbbapi.model.Update
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveLatestResourceUpdateRequest(
-    resourceId: Int
+data class RetrieveLatestResourceUpdateRequest(
+    val resourceId: Int
 ): Request<Update>(
     "resources/$resourceId/updates/latest",
     Method.GET,

@@ -5,7 +5,7 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListResourcesByAuthorRequest(userId: Int, sortOptions: SortOptions) : Request<Array<BasicResource>>(
+data class ListResourcesByAuthorRequest(val userId: Int, val sortOptions: SortOptions) : Request<Array<BasicResource>>(
     "resources/author/$userId${sortOptions}",
     Method.GET,
     null

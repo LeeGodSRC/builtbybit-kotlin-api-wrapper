@@ -5,7 +5,10 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListResourceDownloadsByVersionRequest(resourceId: Int, versionId: Int, sortOptions: SortOptions) : Request<Array<Download>>(
+data class ListResourceDownloadsByVersionRequest(
+    val resourceId: Int,
+    val versionId: Int,
+    val sortOptions: SortOptions) : Request<Array<Download>>(
     "resources/$resourceId/downloads/versions/$versionId${sortOptions}",
     Method.GET,
     null

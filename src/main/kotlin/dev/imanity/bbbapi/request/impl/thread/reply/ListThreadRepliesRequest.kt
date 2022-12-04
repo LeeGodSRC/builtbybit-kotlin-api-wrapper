@@ -5,7 +5,7 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListThreadRepliesRequest(threadId: Int, sortOptions: SortOptions) : Request<Array<Reply>>(
+data class ListThreadRepliesRequest(val threadId: Int, val sortOptions: SortOptions) : Request<Array<Reply>>(
     "threads/$threadId/replies${sortOptions}",
     Method.GET,
     null

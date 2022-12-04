@@ -4,8 +4,8 @@ import dev.imanity.bbbapi.model.ProfilePost
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveProfilePostRequest(
-    profilePostId: Int
+data class RetrieveProfilePostRequest(
+    val profilePostId: Int
 ): Request<ProfilePost>(
     "members/self/profile-posts/$profilePostId",
     Method.GET,

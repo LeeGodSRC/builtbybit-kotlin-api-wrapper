@@ -5,7 +5,9 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListCollaboratedResourcesRequest(sortOptions: SortOptions): Request<Array<BasicResource>>(
+data class ListCollaboratedResourcesRequest(
+    val sortOptions: SortOptions
+): Request<Array<BasicResource>>(
     "resources/collaborated${sortOptions}",
     Method.GET,
     null

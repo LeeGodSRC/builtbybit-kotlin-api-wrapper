@@ -3,11 +3,11 @@ package dev.imanity.bbbapi.request.impl.resource
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ModifyResourceRequest(
-    resourceId: Int,
-    title: String,
-    tagline: String,
-    description: String) : Request<Unit>(
+data class ModifyResourceRequest(
+    val resourceId: Int,
+    val title: String,
+    val tagline: String,
+    val description: String) : Request<Unit>(
     "resources/$resourceId",
     Method.PATCH,
     mapOf(

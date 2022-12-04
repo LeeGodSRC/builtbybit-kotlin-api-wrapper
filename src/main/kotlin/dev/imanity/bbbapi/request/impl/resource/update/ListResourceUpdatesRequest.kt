@@ -5,9 +5,9 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListResourceUpdatesRequest(
-    resourceId: Int,
-    sortOptions: SortOptions
+data class ListResourceUpdatesRequest(
+    val resourceId: Int,
+    val sortOptions: SortOptions
 ): Request<Array<Update>>(
     "resources/$resourceId/updates${sortOptions}",
     Method.GET,

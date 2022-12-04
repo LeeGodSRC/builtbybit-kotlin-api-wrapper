@@ -4,8 +4,8 @@ import dev.imanity.bbbapi.model.Member
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveMemberByIDRequest(
-    id: Int
+data class RetrieveMemberByIDRequest(
+    val id: Int
 ): Request<Member>(
     "members/$id",
     Method.GET,

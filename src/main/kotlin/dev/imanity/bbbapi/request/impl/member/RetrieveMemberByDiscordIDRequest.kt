@@ -4,8 +4,8 @@ import dev.imanity.bbbapi.model.Member
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveMemberByDiscordIDRequest(
-    discordId: Long
+data class RetrieveMemberByDiscordIDRequest(
+    val discordId: Long
 ): Request<Member>(
     "members/discord/$discordId",
     Method.GET,

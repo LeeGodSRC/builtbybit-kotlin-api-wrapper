@@ -4,9 +4,9 @@ import dev.imanity.bbbapi.model.License
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveResourceLicenseRequest(
-    resourceId: Int,
-    licenseId: Int
+data class RetrieveResourceLicenseRequest(
+    val resourceId: Int,
+    val licenseId: Int
 ) : Request<License>(
     "resources/$resourceId/licenses/$licenseId",
     Method.GET,

@@ -5,8 +5,8 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListUnreadConversationsRequest(
-    sortOptions: SortOptions
+data class ListUnreadConversationsRequest(
+    val sortOptions: SortOptions
 ): Request<Array<Conversation>>(
     "conversations/conversations${sortOptions}",
     Method.GET,

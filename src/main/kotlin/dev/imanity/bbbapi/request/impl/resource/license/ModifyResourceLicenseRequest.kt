@@ -3,13 +3,13 @@ package dev.imanity.bbbapi.request.impl.resource.license
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ModifyResourceLicenseRequest(
-    resourceId: Int,
-    licenseId: Int,
-    permanent: Boolean,
-    active: Boolean,
-    startDate: Long,
-    endDate: Long
+data class ModifyResourceLicenseRequest(
+    val resourceId: Int,
+    val licenseId: Int,
+    val permanent: Boolean,
+    val active: Boolean,
+    val startDate: Long,
+    val endDate: Long
 ) : Request<Unit>(
     "resources/$resourceId/licenses/$licenseId",
     Method.PATCH,

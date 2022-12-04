@@ -4,11 +4,11 @@ import dev.imanity.bbbapi.model.License
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveResourceLicenseByMemberRequest(
-    resourceId: Int,
-    memberId: Int,
-    nonce: Int,
-    timestamp: Long
+data class RetrieveResourceLicenseByMemberRequest(
+    val resourceId: Int,
+    val memberId: Int,
+    val nonce: Int,
+    val timestamp: Long
 ) : Request<License>(
     "resources/$resourceId/licenses/members/$memberId",
     Method.GET,

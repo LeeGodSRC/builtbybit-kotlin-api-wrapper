@@ -4,5 +4,5 @@ import dev.imanity.bbbapi.model.Resource
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class RetrieveResourceRequest(resourceId: Int) :
+data class RetrieveResourceRequest(val resourceId: Int) :
     Request<Resource>("resources/$resourceId", Method.GET, null)

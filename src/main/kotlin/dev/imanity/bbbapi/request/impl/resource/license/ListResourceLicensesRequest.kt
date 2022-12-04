@@ -5,7 +5,9 @@ import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.Method
 import dev.imanity.bbbapi.request.Request
 
-class ListResourceLicensesRequest(resourceId: Int, sortOptions: SortOptions) : Request<Array<License>>(
+data class ListResourceLicensesRequest(
+    val resourceId: Int,
+    val sortOptions: SortOptions) : Request<Array<License>>(
     "resources/$resourceId/licenses${sortOptions}",
     Method.GET,
     null
