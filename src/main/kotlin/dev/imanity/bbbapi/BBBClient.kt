@@ -12,7 +12,7 @@ import io.ktor.utils.io.core.*
 import kotlinx.coroutines.delay
 import kotlinx.serialization.json.Json
 
-class BBBClient(val token: Token) : Closeable {
+class BBBClient(private val token: Token) : Closeable {
 
     private val throttler = Throttler()
     private val httpClient = HttpClient {
