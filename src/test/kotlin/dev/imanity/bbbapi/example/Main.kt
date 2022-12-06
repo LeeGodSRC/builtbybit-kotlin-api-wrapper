@@ -6,18 +6,15 @@ import dev.imanity.bbbapi.model.Type
 import dev.imanity.bbbapi.model.sort.Order
 import dev.imanity.bbbapi.model.sort.SortOptions
 import dev.imanity.bbbapi.request.listPublicResources
+import dev.imanity.bbbapi.request.retrieveMemberResourceReview
 import kotlinx.coroutines.runBlocking
 
 fun main() {
-    val client = BBBClient(Token("TOKEN STRING", Type.PRIVATE))
+    val client = BBBClient(Token("o8jbSjHw+eMJLZIhJFIFqgmwTmOOgM2G", Type.PRIVATE))
 
     runBlocking {
-        val resourceArray = client.listPublicResources(SortOptions(
-            "purchase_count",
-            Order.DESCENDING,
-            1
-        ))
+        val review = client.retrieveMemberResourceReview(1, 1)
 
-        println(resourceArray)
+        println(review)
     }
 }

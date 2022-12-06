@@ -8,7 +8,8 @@ data class License(
     @SerialName("license_id") val licenseId: Int,
     @SerialName("purchaser_id") val purchaserId: Int,
     @SerialName("is_validated") val isValidated: Boolean,
-    @SerialName("is_active") val isActive: Boolean,
+    @SerialName("active") val isActive: Boolean,
+    @SerialName("permanent") val isPermanent: Boolean,
     @SerialName("start_date") val startDate: Long,
     @SerialName("end_date") val endDate: Long,
     @SerialName("previous_end_date") val previousEndDate: Long
