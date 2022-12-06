@@ -7,19 +7,18 @@ import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import io.ktor.serialization.kotlinx.json.*
+import io.ktor.serialization.gson.*
 import io.ktor.utils.io.core.*
 import kotlinx.coroutines.delay
-import kotlinx.serialization.json.Json
 
 class BBBClient(private val token: Token) : Closeable {
 
     private val throttler = Throttler()
     private val httpClient = HttpClient {
         install(ContentNegotiation) {
-            json(Json {
-                ignoreUnknownKeys = true
-            })
+            gson {
+
+            }
         }
     }
 

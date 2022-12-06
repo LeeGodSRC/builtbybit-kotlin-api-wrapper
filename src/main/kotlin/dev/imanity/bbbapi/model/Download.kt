@@ -1,12 +1,10 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Download(
-    @SerialName("resource_id") val resourceId: Int,
-    @SerialName("version_id") val versionId: Int,
-    @SerialName("downloader_id") val downloaderId: Int,
-    @SerialName("download_date") val downloadDate: Long
+    @SerializedName("resource_id") val resourceId: Int,
+    @SerializedName("version_id") val versionId: Int,
+    @SerializedName("downloader_id") val downloaderId: Int,
+    @SerializedName("download_date") val downloadDate: Long
     )

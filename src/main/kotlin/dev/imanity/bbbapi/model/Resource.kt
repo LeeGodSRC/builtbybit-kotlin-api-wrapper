@@ -1,25 +1,23 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Resource(
-    @SerialName("resource_id") val resourceId: Int,
-    @SerialName("author_id") val authorId: Int,
+    @SerializedName("resource_id") val resourceId: Int,
+    @SerializedName("author_id") val authorId: Int,
     val title: String,
-    @SerialName("tag_line") val tagLine: String,
+    @SerializedName("tag_line") val tagLine: String,
     val description: String,
-    @SerialName("release_date") val releaseDate: Long,
-    @SerialName("last_update_date") val lastUpdateDate: Long,
-    @SerialName("is_moderated") val isModerated: Boolean = false,
-    @SerialName("category_title") val categoryTitle: String,
-    @SerialName("current_version_id") val currentVersionId: Int,
-    @SerialName("discussion_thread_id") val discussionThreadId: Int? = null,
-    @SerialName("purchase_count") val purchaseCount: Int,
+    @SerializedName("release_date") val releaseDate: Long,
+    @SerializedName("last_update_date") val lastUpdateDate: Long,
+    @SerializedName("is_moderated") val isModerated: Boolean = false,
+    @SerializedName("category_title") val categoryTitle: String,
+    @SerializedName("current_version_id") val currentVersionId: Int,
+    @SerializedName("discussion_thread_id") val discussionThreadId: Int? = null,
+    @SerializedName("purchase_count") val purchaseCount: Int,
     val price: Double,
     val currency: String,
-    @SerialName("download_count") val downloadCount: Int,
-    @SerialName("review_count") val reviewCount: Int,
-    @SerialName("review_average") val reviewAverage: Double
+    @SerializedName("download_count") val downloadCount: Int,
+    @SerializedName("review_count") val reviewCount: Int,
+    @SerializedName("review_average") val reviewAverage: Double
 )

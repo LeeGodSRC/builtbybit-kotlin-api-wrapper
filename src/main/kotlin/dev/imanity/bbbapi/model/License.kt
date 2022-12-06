@@ -1,16 +1,14 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class License(
-    @SerialName("license_id") val licenseId: Int,
-    @SerialName("purchaser_id") val purchaserId: Int,
-    @SerialName("is_validated") val isValidated: Boolean,
-    @SerialName("active") val isActive: Boolean,
-    @SerialName("permanent") val isPermanent: Boolean,
-    @SerialName("start_date") val startDate: Long,
-    @SerialName("end_date") val endDate: Long,
-    @SerialName("previous_end_date") val previousEndDate: Long
+    @SerializedName("license_id") val licenseId: Int,
+    @SerializedName("purchaser_id") val purchaserId: Int,
+    @SerializedName("is_validated") val isValidated: Boolean,
+    @SerializedName("active") val isActive: Boolean,
+    @SerializedName("permanent") val isPermanent: Boolean,
+    @SerializedName("start_date") val startDate: Long,
+    @SerializedName("end_date") val endDate: Long,
+    @SerializedName("previous_end_date") val previousEndDate: Long
 )

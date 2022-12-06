@@ -1,17 +1,15 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Conversation(
-    @SerialName("conversation_id") val conversationId: Int,
+    @SerializedName("conversation_id") val conversationId: Int,
     val title: String,
-    @SerialName("creation_date") val creationDate: Long,
-    @SerialName("creator_id") val creatorId: Int,
-    @SerialName("last_message_id") val lastMessageId: Long,
-    @SerialName("last_read_date") val lastReadDate: Long,
-    @SerialName("is_open") val isOpen: Boolean,
-    @SerialName("reply_count") val replyCount: Int,
-    @SerialName("recipient_ids") val recipientIds: IntArray
+    @SerializedName("creation_date") val creationDate: Long,
+    @SerializedName("creator_id") val creatorId: Int,
+    @SerializedName("last_message_id") val lastMessageId: Long,
+    @SerializedName("last_read_date") val lastReadDate: Long,
+    @SerializedName("is_open") val isOpen: Boolean,
+    @SerializedName("reply_count") val replyCount: Int,
+    @SerializedName("recipient_ids") val recipientIds: IntArray
 )

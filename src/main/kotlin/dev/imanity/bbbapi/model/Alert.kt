@@ -1,13 +1,11 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Alert(
-    @SerialName("caused_member_id") val causedMemberId: Int,
-    @SerialName("content_type") val contentType: String,
-    @SerialName("content_id") val contentId: Int,
-    @SerialName("alert_type") val alertType: String,
-    @SerialName("alert_date") val alertDate: Long
+    @SerializedName("caused_member_id") val causedMemberId: Int,
+    @SerializedName("content_type") val contentType: String,
+    @SerializedName("content_id") val contentId: Int,
+    @SerializedName("alert_type") val alertType: String,
+    @SerializedName("alert_date") val alertDate: Long
 )

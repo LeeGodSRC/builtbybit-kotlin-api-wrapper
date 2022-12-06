@@ -1,12 +1,10 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Ban(
-    @SerialName("member_id") val memberId: Int,
-    @SerialName("banned_by_id") val bannedById: Int,
-    @SerialName("ban_date") val banDate: Long,
+    @SerializedName("member_id") val memberId: Int,
+    @SerializedName("banned_by_id") val bannedById: Int,
+    @SerializedName("ban_date") val banDate: Long,
     val reason: String
     )

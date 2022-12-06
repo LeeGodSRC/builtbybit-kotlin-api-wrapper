@@ -1,12 +1,10 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Reply(
-    @SerialName("reply_id") val replyId: Int,
-    @SerialName("author_id") val authorId: Int,
-    @SerialName("post_date") val postDate: Long,
-    @SerialName("message") val message: String
+    @SerializedName("reply_id") val replyId: Int,
+    @SerializedName("author_id") val authorId: Int,
+    @SerializedName("post_date") val postDate: Long,
+    @SerializedName("message") val message: String
     )

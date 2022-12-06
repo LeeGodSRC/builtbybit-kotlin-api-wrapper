@@ -1,14 +1,12 @@
 package dev.imanity.bbbapi.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Review(
-    @SerialName("review_id") val reviewId: Int,
-    @SerialName("reviewer_id") val reviewerId: Int,
-    @SerialName("review_date") val reviewDate: Long,
+    @SerializedName("review_id") val reviewId: Int,
+    @SerializedName("reviewer_id") val reviewerId: Int,
+    @SerializedName("review_date") val reviewDate: Long,
     val rating: Int,
     val message: String,
-    @SerialName("response") val authorResponse: String
+    @SerializedName("response") val authorResponse: String
 )
