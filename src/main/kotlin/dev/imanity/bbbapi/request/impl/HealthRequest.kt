@@ -6,7 +6,7 @@ import dev.imanity.bbbapi.request.Response
 import io.ktor.client.statement.*
 
 class HealthRequest: Request<String>("health", Method.GET, null) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<String> {
+    override suspend fun decode(httpResponse: HttpResponse): String {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 

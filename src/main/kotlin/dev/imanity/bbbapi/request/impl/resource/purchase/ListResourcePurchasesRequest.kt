@@ -15,7 +15,7 @@ data class ListResourcePurchasesRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Purchase>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Purchase> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

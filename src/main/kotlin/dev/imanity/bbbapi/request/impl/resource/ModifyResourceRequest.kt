@@ -19,7 +19,7 @@ data class ModifyResourceRequest(
         "description" to description
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse): Unit {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

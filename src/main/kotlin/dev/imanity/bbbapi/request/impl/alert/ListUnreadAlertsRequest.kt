@@ -15,7 +15,7 @@ data class ListUnreadAlertsRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Alert>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Alert> {
         return decodeResponse(httpResponse)
     }
 }

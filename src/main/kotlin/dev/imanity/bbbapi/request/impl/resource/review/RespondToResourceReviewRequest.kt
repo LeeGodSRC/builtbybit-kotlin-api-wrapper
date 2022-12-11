@@ -14,7 +14,7 @@ data class RespondToResourceReviewRequest(
     Method.PATCH,
     response
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse): Unit {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

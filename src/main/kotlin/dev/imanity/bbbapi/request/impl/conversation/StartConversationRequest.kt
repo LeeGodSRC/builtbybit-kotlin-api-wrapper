@@ -39,7 +39,7 @@ data class StartConversationRequest(
         return result
     }
 
-    override suspend fun decode(httpResponse: HttpResponse): Response<Int> {
+    override suspend fun decode(httpResponse: HttpResponse): Int {
         return decodeResponse(httpResponse)
     }
 }

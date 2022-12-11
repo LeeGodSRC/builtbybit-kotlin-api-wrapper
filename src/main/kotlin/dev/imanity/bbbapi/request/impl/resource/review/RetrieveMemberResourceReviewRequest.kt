@@ -14,7 +14,7 @@ data class RetrieveMemberResourceReviewRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Review> {
+    override suspend fun decode(httpResponse: HttpResponse): Review {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

@@ -16,7 +16,7 @@ data class EditProfilePostRequest(
         "message" to content
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse) {
         return decodeResponse(httpResponse)
     }
 }

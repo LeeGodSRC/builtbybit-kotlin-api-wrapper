@@ -19,7 +19,7 @@ data class ModifyYourselfRequest(
         "signature" to signature
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse) {
         return decodeResponse(httpResponse)
     }
 }

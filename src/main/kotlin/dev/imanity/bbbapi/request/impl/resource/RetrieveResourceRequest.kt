@@ -8,7 +8,7 @@ import io.ktor.client.statement.*
 
 data class RetrieveResourceRequest(val resourceId: Int) :
     Request<Resource>("resources/$resourceId", Method.GET, null) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Resource> {
+    override suspend fun decode(httpResponse: HttpResponse): Resource {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

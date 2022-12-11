@@ -12,7 +12,7 @@ data class ListThreadRepliesRequest(val threadId: Int, val sortOptions: SortOpti
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Reply>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Reply> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

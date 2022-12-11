@@ -14,7 +14,7 @@ data class RetrieveProfilePostRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<ProfilePost> {
+    override suspend fun decode(httpResponse: HttpResponse): ProfilePost {
         return decodeResponse(httpResponse)
     }
 }

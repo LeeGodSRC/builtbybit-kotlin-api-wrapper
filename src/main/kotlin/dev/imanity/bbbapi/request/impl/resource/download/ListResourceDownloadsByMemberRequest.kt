@@ -16,7 +16,7 @@ data class ListResourceDownloadsByMemberRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Download>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Download> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

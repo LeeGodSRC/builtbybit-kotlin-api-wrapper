@@ -11,7 +11,7 @@ data class ReplyToThreadRequest(val threadId: Int, val message: String): Request
     Method.POST,
     mapOf("message" to message)
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Reply> {
+    override suspend fun decode(httpResponse: HttpResponse): Reply {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

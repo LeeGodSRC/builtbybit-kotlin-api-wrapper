@@ -14,7 +14,7 @@ data class RetrieveResourceVersionRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Version> {
+    override suspend fun decode(httpResponse: HttpResponse): Version {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

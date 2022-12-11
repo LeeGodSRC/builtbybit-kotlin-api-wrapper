@@ -7,6 +7,6 @@ abstract class Request<T>(urlPath: String,
                       val body: Any?) {
     val url = "https://api.builtbybit.com/v1/$urlPath"
 
-    abstract suspend fun decode(httpResponse: HttpResponse): Response<T>
+    abstract suspend fun decode(httpResponse: HttpResponse): T
 
 }

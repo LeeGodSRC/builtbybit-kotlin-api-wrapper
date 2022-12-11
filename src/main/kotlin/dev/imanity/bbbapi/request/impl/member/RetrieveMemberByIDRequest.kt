@@ -13,7 +13,7 @@ data class RetrieveMemberByIDRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Member> {
+    override suspend fun decode(httpResponse: HttpResponse): Member {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

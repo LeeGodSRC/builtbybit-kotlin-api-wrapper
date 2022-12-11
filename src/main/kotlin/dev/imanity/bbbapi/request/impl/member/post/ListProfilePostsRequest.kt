@@ -13,7 +13,7 @@ data class ListProfilePostsRequest(
     dev.imanity.bbbapi.request.Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<ProfilePost>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<ProfilePost> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

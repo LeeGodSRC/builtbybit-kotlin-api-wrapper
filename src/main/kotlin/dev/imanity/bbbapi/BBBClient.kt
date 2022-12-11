@@ -1,5 +1,8 @@
 package dev.imanity.bbbapi
 
+import dev.imanity.bbbapi.exception.RequestErrorException
+import dev.imanity.bbbapi.exception.RequestRateLimitedException
+import dev.imanity.bbbapi.exception.RequestThrowsException
 import dev.imanity.bbbapi.model.Token
 import dev.imanity.bbbapi.request.*
 import io.ktor.client.*
@@ -22,7 +25,7 @@ class BBBClient(private val token: Token) : Closeable {
         }
     }
 
-    suspend fun <T : Any> execute(request: Request<T>, wait: Boolean = true): Response<T> {
+    suspend fun <T : Any> execute(request: Request<T>, wait: Boolean = true): T {
         while (wait) {
             val stall = throttler.stall(request.method)
             if (stall <= 0) {
@@ -31,15 +34,20 @@ class BBBClient(private val token: Token) : Closeable {
 
             delay(stall)
 
-            val response = this.executeRequest(request)
-            if (response.type == Type.RATE_LIMITED) {
-                if (request.method == Method.GET) {
-                    throttler.read = response.rateLimitTime
+            val response = kotlin.runCatching {
+                this.executeRequest(request)
+            }.getOrElse {
+                if (it is RequestRateLimitedException) {
+                    if (request.method == Method.GET) {
+                        throttler.read = it.retryAfter
+                    } else {
+                        throttler.write = it.retryAfter
+                    }
+                    null
                 } else {
-                    throttler.write = response.rateLimitTime
+                    throw it
                 }
-                continue
-            }
+            } ?: continue
 
             return response
         }
@@ -57,7 +65,7 @@ class BBBClient(private val token: Token) : Closeable {
 
         request.decode(httpResponse)
     }.getOrElse {
-        Response(Type.EXCEPTION, null, null, it, 0)
+        throw RequestThrowsException(it)
     }
 
     private suspend fun get(request: Request<*>) = httpClient.get(request.url) {
@@ -94,13 +102,13 @@ class BBBClient(private val token: Token) : Closeable {
 
 }
 
-suspend inline fun <reified T : Any> decodeResponse(response: HttpResponse): Response<T> {
+suspend inline fun <reified T : Any> decodeResponse(response: HttpResponse): T {
     val body = response.body<ResponseBody<T>>()
     return if (response.headers.contains("Retry-After")) {
-        Response.rateLimit(response.headers["Retry-After"]!!.toLong())
+        throw RequestRateLimitedException(response.headers["Retry-After"]!!.toLong())
     } else if (body.result == "error") {
-        Response.error(body.error!!)
+        throw RequestErrorException(body.error!!)
     } else {
-        Response.success(body.data!!)
+        body.data!!
     }
 }

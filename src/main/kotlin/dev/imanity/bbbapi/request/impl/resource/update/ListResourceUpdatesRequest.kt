@@ -15,7 +15,7 @@ data class ListResourceUpdatesRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Update>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Update> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

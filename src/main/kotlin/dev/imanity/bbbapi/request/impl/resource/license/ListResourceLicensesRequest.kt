@@ -15,7 +15,7 @@ data class ListResourceLicensesRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<License>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<License> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

@@ -13,9 +13,7 @@ data class DeleteProfilePostRequest(
     Method.DELETE,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
-
+    override suspend fun decode(httpResponse: HttpResponse) {
         return decodeResponse(httpResponse)
-
     }
 }

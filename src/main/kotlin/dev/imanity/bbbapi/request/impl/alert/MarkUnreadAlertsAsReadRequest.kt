@@ -15,7 +15,7 @@ data class MarkUnreadAlertsAsReadRequest(
         "read" to read
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse) {
         return decodeResponse(httpResponse)
     }
 }

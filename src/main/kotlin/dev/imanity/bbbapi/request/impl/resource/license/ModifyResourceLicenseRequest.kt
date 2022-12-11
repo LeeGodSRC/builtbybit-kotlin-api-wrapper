@@ -22,7 +22,7 @@ data class ModifyResourceLicenseRequest(
         "end_date" to endDate
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Unit> {
+    override suspend fun decode(httpResponse: HttpResponse) {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

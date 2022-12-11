@@ -15,7 +15,7 @@ data class ListResourceVersionsRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Version>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Version> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

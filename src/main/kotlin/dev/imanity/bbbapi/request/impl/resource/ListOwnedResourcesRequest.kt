@@ -12,7 +12,7 @@ data class ListOwnedResourcesRequest(val sortOptions: SortOptions) : Request<Arr
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<BasicResource>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<BasicResource> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

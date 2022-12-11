@@ -14,7 +14,7 @@ data class RetrieveMemberByDiscordIDRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Member> {
+    override suspend fun decode(httpResponse: HttpResponse): Member {
         return decodeResponse(httpResponse)
     }
 }

@@ -16,7 +16,7 @@ data class ReplyToUnreadConversationRequest(
         "message" to message,
     ),
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Int> {
+    override suspend fun decode(httpResponse: HttpResponse): Int {
         return decodeResponse(httpResponse)
     }
 }

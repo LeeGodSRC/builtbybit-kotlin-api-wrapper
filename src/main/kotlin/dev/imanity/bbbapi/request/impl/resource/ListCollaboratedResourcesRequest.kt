@@ -14,7 +14,7 @@ data class ListCollaboratedResourcesRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<BasicResource>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<BasicResource> {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

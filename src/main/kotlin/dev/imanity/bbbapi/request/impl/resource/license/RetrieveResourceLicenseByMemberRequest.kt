@@ -19,7 +19,7 @@ data class RetrieveResourceLicenseByMemberRequest(
         "timestamp" to timestamp
     )
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<License> {
+    override suspend fun decode(httpResponse: HttpResponse): License {
         return dev.imanity.bbbapi.decodeResponse(httpResponse)
     }
 }

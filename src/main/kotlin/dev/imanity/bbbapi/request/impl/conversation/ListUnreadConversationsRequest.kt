@@ -15,7 +15,7 @@ data class ListUnreadConversationsRequest(
     Method.GET,
     null
 ) {
-    override suspend fun decode(httpResponse: HttpResponse): Response<Array<Conversation>> {
+    override suspend fun decode(httpResponse: HttpResponse): Array<Conversation> {
         return decodeResponse(httpResponse)
     }
 }
